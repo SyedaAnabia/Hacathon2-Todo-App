@@ -33,9 +33,10 @@ jobs:
 
       - name: Build with Next.js
         run: |
-          export NODE_ENV=production
+          cd frontend
           npm run build
-        working-directory: ./frontend
+          npm run export
+        working-directory: .
 
       - name: Create .nojekyll file
         run: |
