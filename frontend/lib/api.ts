@@ -1,13 +1,17 @@
 // frontend/lib/api.ts
 
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import { mockAuthAPI, mockTodoAPI } from './mockApi';
 
 // Base API URL from environment
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000/api';
 
+// Determine if we're running on GitHub Pages (static export)
+const isStaticExport = typeof window !== 'undefined' && window.location.hostname.includes('github.io');
+
 // Create axios instance
 const apiClient: AxiosInstance = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: isStaticExport ? '' : API_BASE_URL, // Use empty string for static export to prevent CORS issues
   timeout: 10000, // 10 seconds timeout
   headers: {
     'Content-Type': 'application/json',
@@ -51,7 +55,7 @@ apiClient.interceptors.response.use(
 export default apiClient;
 
 // Export individual API functions for convenience
-export const authAPI = {
+export const authAPI = isStaticExport ? mockAuthAPI : {
   login: (email: string, password: string) =>
     apiClient.post('/auth/login', null, {
       params: {
@@ -64,7 +68,7 @@ export const authAPI = {
     apiClient.post('/auth/signup', { email, password }),
 };
 
-export const todoAPI = {
+export const todoAPI = isStaticExport ? mockTodoAPI : {
   // Get all todos for the authenticated user
   getTodos: () =>
     apiClient.get('/todos'),
