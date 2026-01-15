@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // Required for static exports
-  basePath: '/2-try', // GitHub Pages subdirectory path
+  basePath: '/Hackthon2-phase2', // GitHub Pages subdirectory path (new repository name)
   trailingSlash: true, // Optional: adds trailing slashes to URLs
   env: {
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000/api',
