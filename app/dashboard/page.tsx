@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
-import { TodoList } from '@/components/TodoList';
-import { TodoForm } from '@/components/TodoForm';
-import { Todo } from '@/types';
-import { todoServiceToUse as todoService } from '@/lib/todoServiceSelector';
+import { useAuth } from '../frontend/src/contexts/AuthContext'; // Updated path to match actual location
+import { TodoList } from '../frontend/app/components/TodoList';
+import { TodoForm } from '../frontend/app/components/TodoForm';
+import { Todo } from '../frontend/src/types';
+import { todoServiceToUse as todoService } from '../frontend/src/lib/todoServiceSelector';
 import Link from 'next/link';
 
 export default function DashboardPage() {

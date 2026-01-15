@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from './frontend/src/contexts/AuthContext'; // Updated path to match actual location
 
 export default function HomePage() {
   const { isAuthenticated } = useAuth();

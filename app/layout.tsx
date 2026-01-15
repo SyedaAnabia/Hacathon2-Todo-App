@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { AuthProvider } from '../src/contexts/AuthContext';
+import { AuthProvider } from './frontend/src/contexts/AuthContext';
 
 export const metadata: Metadata = {
   title: 'Todo App',

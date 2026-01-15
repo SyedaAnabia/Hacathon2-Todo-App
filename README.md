@@ -80,6 +80,36 @@ This is a secure, multi-user Todo web application built with Next.js frontend an
 
 The frontend will be available at `http://localhost:3000`.
 
+## Deployment to GitHub Pages
+
+To deploy the application to GitHub Pages:
+
+1. **Navigate to the frontend directory**:
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Build the application**:
+   ```bash
+   npm run build
+   ```
+
+4. **Export for static hosting**:
+   ```bash
+   npm run export
+   ```
+
+5. **Deploy the `out` directory** to GitHub Pages
+
+The application is configured to work with the base path `/Hackthon2-phase2` for GitHub Pages deployment.
+
+**Note**: The main application is in the `frontend` directory. The root `app` directory is a duplicate and should not be used for deployment.
+
 ## API Documentation
 
 API documentation is available at `http://localhost:8000/docs` when the backend is running.
