@@ -1,17 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    appDir: true,
+  env: {
+    NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000/api',
   },
   images: {
-    domains: ['example.com'], // Add your image domains here
-    unoptimized: true, // GitHub Pages ke liye zaruri
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+      {
+        protocol: 'https',
+        hostname: 'your-backend-domain.com',
+      },
+    ],
   },
-  output: 'export', // Static export ke liye
-  basePath: '/phase2-todo', // Apne repo ka naam
-  assetPrefix: '/phase2-todo/', // Apne repo ka naam
 };
 
 module.exports = nextConfig;
