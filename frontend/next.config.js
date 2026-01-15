@@ -4,14 +4,14 @@ const nextConfig = {};
 // Only apply these settings in production for GitHub Pages
 if (process.env.NODE_ENV === 'production') {
   nextConfig.output = 'export'; // Required for static exports in production
-  nextConfig.basePath = '/Hackthon2-phase2'; // GitHub Pages subdirectory path
-  nextConfig.assetPrefix = '/Hackthon2-phase2/'; // Prefix for asset paths (note the trailing slash)
+  nextConfig.basePath = '/Hacathon2-Todo-App'; // GitHub Pages subdirectory path (matching repo name)
+  nextConfig.assetPrefix = '/Hacathon2-Todo-App/'; // Prefix for asset paths (note the trailing slash)
   nextConfig.trailingSlash = true; // Important for GitHub Pages
 }
 
 nextConfig.env = {
   NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || (process.env.NODE_ENV === 'production'
-    ? 'https://fakharuddin1.github.io/Hackthon2-phase2/api' // Production API URL
+    ? 'https://syedaanabia.github.io/Hacathon2-Todo-App/api' // Production API URL (updated to match repo owner and name)
     : 'http://localhost:8000/api'), // Local development API URL
 };
 
@@ -28,7 +28,7 @@ nextConfig.images = {
     },
     {
       protocol: 'https',
-      hostname: 'fakharuddin1.github.io',
+      hostname: 'syedaanabia.github.io',
     }
   ],
 };
